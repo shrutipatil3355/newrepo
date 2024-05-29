@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Necklaces - Jewelry Heaven</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Style for navigation bar */
+        nav {
+            background-color: #ffccd5; /* Pastel pink */
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .nav-links li:last-child {
+            margin-right: 0;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            background-color: #e0a5b0; /* Slightly darker pastel pink */
+            color: #fff;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+        }
+
+        /* Dropdown menu styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffccd5;
+            color: #333;
+            width: 150px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #e0a5b0;
+            color: #fff;
+        }
+
+        /* Style for category section */
+        .categories {
+            padding: 20px;
+            background-color: #e0bbff; /* Pastel lavender */
+            text-align: center;
+        }
+
+        .category-link {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .category-link:hover {
+            background-color: #d1a3ff; /* Slightly darker pastel lavender */
+            color: #fff;
+        }
+
+        /* Product Section */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: calc(25% - 20px); /* Adjust width to fit 4 products per row */
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .product h3 {
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .product p {
+            font-weight: bold;
+            color: #e91e63;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="images/jewelry_logo.png" alt="">
+            <h1>Jewelry Heaven</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Jewelry</a>
+                <div class="dropdown-content">
+                    <a href="necklaces.html">Necklaces</a>
+                    <a href="bracelets.html">Bracelets</a>
+                    <a href="rings.html">Rings</a>
+                    <a href="earrings.html">Earrings</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Account</a>
+                <div class="dropdown-content">
+                    <a href="cart.html">Cart</a>
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="main-content">
+        <h2>Necklaces</h2>
+        <div class="products">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="images/n1.jpg" alt="Necklace 1">
+                <h3>Gold Necklace</h3>
+                <p>$500.00</p>
+            </div>
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="images/n2.jpg" alt="Necklace 2">
+                <h3>Diamond Necklace</h3>
+                <p>$250.00</p>
+            </div>
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="images/n3.jpg" alt="Necklace 3">
+                <h3>Sapphire Necklace</h3>
+                <p>$400.00</p>
+            </div>
+            <!-- Product 4 -->
+            <div class="product">
+                <img src="images/n4.jpg" alt="Necklace 4">
+                <h3>Emerald Necklace</h3>
+                <p>$350.00</p>
+            </div>
+            <!-- Product 5 -->
+            <div class="product">
+                <img src="images/n5.jpg" alt="Necklace 5">
+                <h3>Ruby Necklace</h3>
+                <p>$300.00</p>
+            </div>
+            <!-- Product 6 -->
+            <div class="product">
+                <img src="images/n6.jpg" alt="Necklace 6">
+                <h3>Pearl Necklace</h3>
+                <p>$150.00</p>
+            </div>
+            <!-- Product 7 -->
+            <div class="product">
+                <img src="images/n7.jpg" alt="Necklace 7">
+                <h3>Opal Necklace</h3>
+                <p>$200.00</p>
+            </div>
+            <!-- Product 8 -->
+            <div class="product">
+                <img src="images/n8.jpg" alt="Necklace 8">
+                <h3>Amethyst Necklace</h3>
+                <p>$180.00</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            window.location.href = "login.html";
+        }
+
+        document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+            dropdown.addEventListener('mouseover', function() {
+                this.querySelector('.dropdown-content').style.display = 'block';
+            });
+
+            dropdown.addEventListener('mouseout', function() {
+                this.querySelector('.dropdown-content').style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

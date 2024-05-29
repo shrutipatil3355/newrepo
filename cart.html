@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Jewelry Heaven</title>
+    <style>
+        /* Your existing styles */
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- Your navigation menu here -->
+    </nav>
+    
+    <div class="cart-content">
+        <h2>Your Cart</h2>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Cart items will be dynamically inserted here -->
+            </tbody>
+        </table>
+        <p class="total">Total: $<span id="cart-total">0.00</span></p>
+        <div class="checkout">
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/cart')
+                .then(response => response.json())
+                .then(data => {
+                    const cartTable = document.querySelector('#cart-table tbody');
+                    const cartTotal = document.getElementById('cart-total');
+                    let total = 0;
+
+                    data.cart.forEach(item => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${item.name}</td>
+                            <td>$${item.price.toFixed(2)}</td>
+                        `;
+                        cartTable.appendChild(row);
+                        total += item.price;
+                    });
+
+                    cartTotal.textContent = total.toFixed(2);
+                });
+        });
+
+        function checkout() {
+            alert('Proceed to checkout!');
+            // Add logic to redirect to checkout page
+        }
+
+        function logout() {
+            window.location.href = "login.html";
+        }
+
+        document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+            dropdown.addEventListener('mouseover', function() {
+                this.querySelector('.dropdown-content').style.display = 'block';
+            });
+
+            dropdown.addEventListener('mouseout', function() {
+                this.querySelector('.dropdown-content').style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
